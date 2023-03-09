@@ -1,3 +1,4 @@
+import 'package:event_booking_app/model/screens/filter/filter.dart';
 import 'package:event_booking_app/model/screens/notification/notification.dart';
 import 'package:flutter/material.dart';
 
@@ -23,7 +24,7 @@ class MyApp extends StatelessWidget {
 
         primarySwatch: Colors.blue,
       ),
-      home: Home(),
+      home: Filter(),
       debugShowCheckedModeBanner: false,
     );
   }
