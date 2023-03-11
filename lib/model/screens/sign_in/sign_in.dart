@@ -1,3 +1,4 @@
+import 'package:event_booking_app/model/screens/home/home.dart';
 import 'package:flutter/material.dart';
 class SignIn extends StatefulWidget {
   const SignIn({Key? key}) : super(key: key);
@@ -15,7 +16,7 @@ class _SignInState extends State<SignIn> {
         child: Column(
           children: [
    const SizedBox(
-     height: 50,
+     height: 70,
    ),
 Row(
   mainAxisAlignment: MainAxisAlignment.center,
@@ -44,10 +45,10 @@ Row(
               height: 25,
             ),
             Padding(
-              padding: const EdgeInsets.only(left: 12.0),
+              padding: const EdgeInsets.only(left: 15.0),
               child: Row(
-                children: [
-                  const Text("Sign in",style: TextStyle(
+                children: const [
+                  Text("Sign in",style: TextStyle(
                     fontSize: 24,
                     fontWeight: FontWeight.bold
                   ),)
@@ -58,7 +59,7 @@ Row(
               height: 20,
             ),
             Padding(
-              padding: const EdgeInsets.only(left: 14.0,right: 14),
+              padding: const EdgeInsets.only(left: 15.0,right: 15),
               child: Container(
                 height: 56,
                 width: MediaQuery.of(context).size.width,
@@ -99,7 +100,7 @@ Row(
               height: 14,
             ),
             Padding(
-              padding: const EdgeInsets.only(left: 14.0,right: 14,bottom: 9),
+              padding: const EdgeInsets.only(left: 15.0,right: 15,bottom: 9),
               child: Container(
                 height: 56,
                 width: MediaQuery.of(context).size.width,
@@ -139,7 +140,7 @@ Row(
               height: 20,
             ),
             Padding(
-              padding: const EdgeInsets.only(left: 14.0),
+              padding: const EdgeInsets.only(left: 15.0),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
@@ -206,13 +207,22 @@ Row(
                   child:Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      const Expanded(
+                       Expanded(
                         child: Center(
-                          child: Text("Sign in",style: TextStyle(
-                              fontSize: 16,
-                              color: Color.fromRGBO(255, 255, 255, 1)
+                          child: GestureDetector(
+                            child: const Text("Sign in",style: TextStyle(
+                                fontSize: 16,
+                                color: Color.fromRGBO(255, 255, 255, 1)
 
-                          ),),
+                            ),),
+                            onTap: (){
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(builder: (context) => const Home()),
+                              );
+
+                            },
+                          ),
                         ),
                       ),
                       Padding(
@@ -286,12 +296,12 @@ Row(
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   mainAxisSize: MainAxisSize.min,
-                  children: <Widget>[
-                    const Icon(Icons.facebook,color: Colors.blueAccent,size: 30,),
-                    const SizedBox(
+                  children: const <Widget>[
+                    Icon(Icons.facebook,color: Colors.blueAccent,size: 30,),
+                    SizedBox(
                       width: 15.0,
                     ),
-                    const Text('Login with Facebook',style: TextStyle(
+                    Text('Login with Facebook',style: TextStyle(
                         fontSize: 16,
                         color: Color.fromRGBO(18, 13, 38, 1)
                     ),)
@@ -304,12 +314,12 @@ const SizedBox(
 ),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                const Text("Don’t have an account?",style: TextStyle(
+              children: const [
+                Text("Don’t have an account?",style: TextStyle(
                   fontSize: 15,
                   color: Color.fromRGBO(18, 13, 38, 1)
                 ),),
-                const Text("Sign up",style: TextStyle(
+                Text("Sign up",style: TextStyle(
                     fontSize: 15,
                     color: Color.fromRGBO(86, 105, 255, 1)
                 ),)

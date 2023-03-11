@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+
+import '../notification/notification.dart';
 class MyProfile extends StatefulWidget {
   const MyProfile({Key? key}) : super(key: key);
 
@@ -16,18 +18,24 @@ class _MyProfileState extends State<MyProfile> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             const SizedBox(
-              height: 18,
+              height: 60,
             ),
             Padding(
-              padding: const EdgeInsets.only(left: 12.0,right: 12),
+              padding: const EdgeInsets.only(left: 15.0,right: 15),
               child: Row(
 
                 children: [
                   Row(
-                    children: const [
-                      Icon(Icons.arrow_back,color: Colors.black,),
+                    children:  [
+                      InkWell(
+                          child: const Icon(Icons.arrow_back,color: Colors.black,),
+                        onTap: (){
+                          Navigator.pop(context);
+                        },
 
-                      Padding(
+                      ),
+
+                      const Padding(
                         padding: EdgeInsets.only(left: 8.0),
                         child: Text("Profile",style: TextStyle(
                             color: Colors.black,
@@ -148,26 +156,38 @@ const SizedBox(
                 SizedBox(
                   width: 12,
                 ),
-                Text("About Me",style: TextStyle(
-                  fontSize: 18,
-                  color: Color.fromRGBO(18, 13, 38, 1),
-                  fontWeight: FontWeight.bold
-                ),)
+                Padding(
+                  padding: EdgeInsets.only(left: 8.0),
+                  child: Text("About Me",style: TextStyle(
+                    fontSize: 18,
+                    color: Color.fromRGBO(18, 13, 38, 1),
+                    fontWeight: FontWeight.bold
+                  ),),
+                )
               ],
             ),
             const SizedBox(
               height: 20,
             ),
            Padding(
-             padding: const EdgeInsets.only(left: 12.0,),
-             child: Image.asset("images/img_16.png",height: 100,
-             width: MediaQuery.of(context).size.width*0.8,),
+             padding: const EdgeInsets.only(left: 15.0,),
+             child: GestureDetector(
+               child: Image.asset("images/img_16.png",height: 100,
+               width: MediaQuery.of(context).size.width*0.8,),
+               onTap: (){
+                 Navigator.push(
+                   context,
+                   MaterialPageRoute(builder: (context) => const NotificationScreen()),
+                 );
+
+               },
+             ),
            ),
             const SizedBox(
               height: 20,
             ),
             Padding(
-              padding: const EdgeInsets.only(left: 12.0,right: 12),
+              padding: const EdgeInsets.only(left: 15.0,right: 15),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
@@ -203,7 +223,7 @@ const SizedBox(
             SingleChildScrollView(
               scrollDirection: Axis.horizontal,
               child: Padding(
-                padding: const EdgeInsets.only(left: 12.0,right: 12),
+                padding: const EdgeInsets.only(left: 15.0,right: 15),
                 child: Row(
                   children: [
                     Padding(
@@ -286,7 +306,7 @@ const SizedBox(
             Row(
               children: [
                 Padding(
-                  padding: const EdgeInsets.all(8.0),
+                  padding: const EdgeInsets.only(left:15.0,right: 2),
                   child: Container(
                     height: 31,
                     //width: MediaQuery.of(context).size.width*0.2,

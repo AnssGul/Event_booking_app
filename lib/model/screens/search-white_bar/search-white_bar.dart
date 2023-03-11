@@ -1,3 +1,4 @@
+import 'package:event_booking_app/model/screens/filter/filter.dart';
 import 'package:flutter/material.dart';
 class SearchWhiteBar extends StatefulWidget {
   const SearchWhiteBar({Key? key}) : super(key: key);
@@ -16,16 +17,20 @@ class _SearchWhiteBarState extends State<SearchWhiteBar> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             const SizedBox(
-              height: 10,
+              height: 50,
             ),
             Padding(
-              padding: const EdgeInsets.only(left: 10.0),
+              padding: const EdgeInsets.only(left: 15.0),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.start,
-                children: [
-                  const Icon(Icons.arrow_back),
+                children:  [
+                  InkWell(child: Icon(Icons.arrow_back),
+                  onTap: (){
+                    Navigator.pop(context);
+                  },
+                  ),
 
-                  const Padding(
+                  Padding(
                     padding: EdgeInsets.only(left: 8.0),
                     child: Text("Search",style: TextStyle(
                       fontWeight: FontWeight.bold,
@@ -40,7 +45,7 @@ const SizedBox(
   height: 30,
 ),
             Padding(
-              padding: const EdgeInsets.only(left: 12.0,right: 12),
+              padding: const EdgeInsets.only(left: 15.0,right: 15),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
@@ -100,7 +105,7 @@ const SizedBox(
               height: 25,
             ),
             Padding(
-              padding: const EdgeInsets.only(left: 12.0,right: 12),
+              padding: const EdgeInsets.only(left: 15.0,right: 15),
               child: Container(
                 height: 112,
                 width: MediaQuery.of(context).size.width,
@@ -125,13 +130,15 @@ child: Row(
         ),
     ),
     Padding(
-        padding: const EdgeInsets.only(left: 10,top: 22.0),
+        padding: const EdgeInsets.only(left: 10,top: 15.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             const Text("1st  May- Sat -2:00 PM",style: TextStyle(
                 fontSize: 12,
-                color: Color.fromRGBO(86, 105, 255, 1)
+                color: Color.fromRGBO(86, 105, 255, 1),
+              fontWeight: FontWeight.bold
+
             ),),
             Padding(
               padding: const EdgeInsets.only(top: 8.0),
@@ -148,7 +155,7 @@ child: Row(
               height: 25,
             ),
             Padding(
-              padding: const EdgeInsets.only(left: 12.0,right: 12),
+              padding: const EdgeInsets.only(left: 15.0,right: 15),
               child: Container(
                 height: 112,
                 width: MediaQuery.of(context).size.width,
@@ -173,13 +180,14 @@ child: Row(
                       ),
                     ),
                     Padding(
-                      padding: const EdgeInsets.only(left: 10,top: 22.0),
+                      padding: const EdgeInsets.only(left: 10,top: 15.0),
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           const Text("1st  May- Sat -2:00 PM",style: TextStyle(
                               fontSize: 12,
-                              color: Color.fromRGBO(86, 105, 255, 1)
+                              color: Color.fromRGBO(86, 105, 255, 1),
+                            fontWeight: FontWeight.bold
                           ),),
                           Padding(
                             padding: const EdgeInsets.only(top: 8.0),
@@ -193,7 +201,7 @@ child: Row(
               ),
             ),
             Padding(
-              padding: const EdgeInsets.only(left: 12.0,right: 12),
+              padding: const EdgeInsets.only(left: 15.0,right: 15),
               child: Container(
                 height: 112,
                 width: MediaQuery.of(context).size.width,
@@ -218,13 +226,14 @@ child: Row(
                       ),
                     ),
                     Padding(
-                      padding: const EdgeInsets.only(left: 10,top: 22.0),
+                      padding: const EdgeInsets.only(left: 10,top: 15.0),
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           const Text("1st  May- Sat -2:00 PM",style: TextStyle(
                               fontSize: 12,
-                              color: Color.fromRGBO(86, 105, 255, 1)
+                              color: Color.fromRGBO(86, 105, 255, 1),
+                                   fontWeight: FontWeight.bold
                           ),),
                           Padding(
                             padding: const EdgeInsets.only(top: 8.0),
@@ -263,13 +272,14 @@ child: Row(
                       ),
                     ),
                     Padding(
-                      padding: const EdgeInsets.only(left: 10,top: 22.0),
+                      padding: const EdgeInsets.only(left: 10,top: 15.0),
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           const Text("1st  May- Sat -2:00 PM",style: TextStyle(
                               fontSize: 12,
-                              color: Color.fromRGBO(86, 105, 255, 1)
+                              color: Color.fromRGBO(86, 105, 255, 1),
+                            fontWeight: FontWeight.bold
                           ),),
                           Padding(
                             padding: const EdgeInsets.only(top: 8.0),
@@ -288,47 +298,58 @@ child: Row(
             ),
             Padding(
               padding: const EdgeInsets.only(left: 12.0,right: 12),
-              child: Container(
-                height: 112,
-                width: MediaQuery.of(context).size.width,
-                decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(20),
-                    color: Colors.white
+              child: GestureDetector(
+                child: Container(
+                  height: 112,
+                  width: MediaQuery.of(context).size.width,
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(20),
+                      color: Colors.white
 
-                ),
-                child: Row(
-                  children: [
-                    Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child:Container(
-                        width: 86.0,
-                        height: 110.0,
-                        decoration: const BoxDecoration(
-                          image: DecorationImage(
-                              fit: BoxFit.cover, image: AssetImage("images/img_17.png")),
-                          borderRadius: BorderRadius.all(Radius.circular(8.0)),
-                          color: Colors.redAccent,
+                  ),
+                  child: Row(
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child:Container(
+                          width: 86.0,
+                          height: 110.0,
+                          decoration: const BoxDecoration(
+                            image: DecorationImage(
+                                fit: BoxFit.cover, image: AssetImage("images/img_17.png")),
+                            borderRadius: BorderRadius.all(Radius.circular(8.0)),
+                            color: Colors.redAccent,
+                          ),
                         ),
                       ),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.only(left: 10,top: 22.0),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          const Text("1st  May- Sat -2:00 PM",style: TextStyle(
-                              fontSize: 12,
-                              color: Color.fromRGBO(86, 105, 255, 1)
-                          ),),
-                          Padding(
-                            padding: const EdgeInsets.only(top: 8.0),
-                            child: Image.asset("images/img_18.png",height: 50,width: 193,),
-                          )
-                        ],
-                      ),
-                    )
-                  ],
+                      Padding(
+                        padding: const EdgeInsets.only(left: 10,top: 15.0),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            const Text("1st  May- Sat -2:00 PM",style: TextStyle(
+                                fontSize: 12,
+                                color: Color.fromRGBO(86, 105, 255, 1),
+                              fontWeight: FontWeight.bold
+                            ),),
+                            Padding(
+                              padding: const EdgeInsets.only(top: 8.0),
+                              child: Image.asset("images/img_18.png",height: 50,width: 193,),
+                            )
+                          ],
+                        ),
+                      )
+                    ],
+                  ),
                 ),
+                onTap: (){
+
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => const Filter()),
+                  );
+
+                },
               ),
             ),
 

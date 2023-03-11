@@ -1,5 +1,7 @@
+import 'package:event_booking_app/model/screens/sign_in/sign_in.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+
 class NotificationScreen extends StatefulWidget {
   const NotificationScreen({Key? key}) : super(key: key);
 
@@ -16,17 +18,21 @@ class _NotificationScreenState extends State<NotificationScreen> {
         child: Column(
           children: [
             const SizedBox(
-              height: 30,
+              height: 50,
             ),
             Padding(
-              padding: const EdgeInsets.only(left: 12.0,right: 12),
+              padding: const EdgeInsets.only(left: 15.0,right: 15),
               child: Row(
                // mainAxisAlignment: MainAxisAlignment.spaceAround,
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Row(
                     children: [
-                      const Icon(Icons.arrow_back,color: Colors.black,),
+                      InkWell(child: const Icon(Icons.arrow_back,color: Colors.black,),
+                      onTap: (){
+                        Navigator.pop(context);
+                      },
+                      ),
 
                       const Padding(
                         padding: EdgeInsets.only(left: 8.0),
@@ -47,7 +53,7 @@ class _NotificationScreenState extends State<NotificationScreen> {
               height: 30,
             ),
             Padding(
-              padding: const EdgeInsets.only(left: 14.0,right: 12),
+              padding: const EdgeInsets.only(left: 15.0,right: 15),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
@@ -84,6 +90,9 @@ class _NotificationScreenState extends State<NotificationScreen> {
                       color: Colors.white,
 
                       borderRadius: BorderRadius.circular(8),
+                      border: Border.all(
+                        color: const Color.fromRGBO(238, 238, 238, 1)
+                      )
                     ),
 
 child: const Center(
@@ -100,37 +109,45 @@ child: const Center(
 
                   ),
                 ),
-                Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Container(
-                    height: 36,
-                    width: MediaQuery.of(context).size.width*0.3,
-                    decoration: BoxDecoration(
-                      color: Colors.blue,
+                GestureDetector(
+                  child: Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Container(
+                      height: 36,
+                      width: MediaQuery.of(context).size.width*0.3,
+                      decoration: BoxDecoration(
+                        color: Colors.blue,
 
-                      borderRadius: BorderRadius.circular(8),
+                        borderRadius: BorderRadius.circular(8),
+                      ),
+
+                      child: const Center(
+                        child:   Text("Accept",style: TextStyle(
+
+                            fontSize: 14,
+
+                            //fontWeight: FontWeight.bold,
+
+                            color: Colors.white
+
+                        ),),
+                      ),
+
                     ),
-
-                    child: const Center(
-                      child:   Text("Accept",style: TextStyle(
-
-                          fontSize: 14,
-
-                          //fontWeight: FontWeight.bold,
-
-                          color: Colors.white
-
-                      ),),
-                    ),
-
                   ),
+                  onTap: (){
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => const SignIn()),
+                    );
+                  },
                 ),
               ],
             ),
 
 
             Padding(
-              padding: const EdgeInsets.only(left: 14.0,right: 12),
+              padding: const EdgeInsets.only(left: 15.0,right: 15),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
@@ -159,7 +176,7 @@ child: const Center(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Padding(
-                  padding: const EdgeInsets.only(left: 35.0),
+                  padding: const EdgeInsets.all(8),
                   child: Container(
                     height: 36,
                     width: MediaQuery.of(context).size.width*0.3,
@@ -167,6 +184,9 @@ child: const Center(
                       color: Colors.white,
 
                       borderRadius: BorderRadius.circular(8),
+                        border: Border.all(
+                            color: const Color.fromRGBO(238, 238, 238, 1)
+                        )
                     ),
 
                     child: const Center(
@@ -208,7 +228,7 @@ child: const Center(
               ],
             ),
             Padding(
-              padding: const EdgeInsets.only(left: 14.0,right: 12),
+              padding: const EdgeInsets.only(left: 15.0,right: 15),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
@@ -245,6 +265,9 @@ child: const Center(
                       color: Colors.white,
 
                       borderRadius: BorderRadius.circular(8),
+                        border: Border.all(
+                            color: const Color.fromRGBO(238, 238, 238, 1)
+                        )
                     ),
 
                     child: const Center(
@@ -289,7 +312,7 @@ child: const Center(
             ),
 
         Padding(
-          padding: const EdgeInsets.only(left: 14.0,right: 12),
+          padding: const EdgeInsets.only(left: 15.0,right: 15),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
@@ -326,6 +349,9 @@ child: const Center(
                   color: Colors.white,
 
                   borderRadius: BorderRadius.circular(8),
+                    border: Border.all(
+                        color: const Color.fromRGBO(238, 238, 238, 1)
+                    )
                 ),
 
                 child: const Center(
@@ -369,7 +395,7 @@ child: const Center(
           ],
         ),
             Padding(
-              padding: const EdgeInsets.only(left: 14.0,right: 12),
+              padding: const EdgeInsets.only(left: 15.0,right: 15),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
@@ -406,6 +432,9 @@ child: const Center(
                       color: Colors.white,
 
                       borderRadius: BorderRadius.circular(8),
+                        border: Border.all(
+                            color: const Color.fromRGBO(238, 238, 238, 1)
+                        )
                     ),
 
                     child: const Center(
@@ -449,7 +478,7 @@ child: const Center(
               ],
             ),
             Padding(
-              padding: const EdgeInsets.only(left: 14.0,right: 12),
+              padding: const EdgeInsets.only(left: 15.0,right: 15),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
@@ -486,6 +515,9 @@ child: const Center(
                       color: Colors.white,
 
                       borderRadius: BorderRadius.circular(8),
+                        border: Border.all(
+                            color: const Color.fromRGBO(238, 238, 238, 1)
+                        )
                     ),
 
                     child: const Center(
@@ -529,7 +561,7 @@ child: const Center(
               ],
             ),
             Padding(
-              padding: const EdgeInsets.only(left: 14.0,right: 12),
+              padding: const EdgeInsets.only(left: 15.0,right: 15),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
